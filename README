@@ -19,10 +19,6 @@
 Note: I have integrated 'Extent reports' to get the HTML format report, so after running the test refresh the product, open the test-output report folder
 Right click on testreport.html file and click on open with browser to get detail HTML report. 
 
-3. Assumption Made - 
-
-3.1 This test is only to verify the login functionality, so just hard coded the data for testing the login feature. 
-
 
 4. Possible steps to develop the application more robust 
 
