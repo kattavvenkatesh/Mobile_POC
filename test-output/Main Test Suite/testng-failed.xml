@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Main Test Suite]">
+  <test name="Login TestCase(failed)">
+    <classes>
+      <class name="testCases.Login_TestCase">
+        <methods>
+          <include name="getResult"/>
+          <include name="validateLoginFunction"/>
+          <include name="initialization"/>
+          <include name="tearDown"/>
+          <include name="startReport"/>
+        </methods>
+      </class> <!-- testCases.Login_TestCase -->
+    </classes>
+  </test> <!-- Login TestCase(failed) -->
+</suite> <!-- Failed suite [Main Test Suite] -->
