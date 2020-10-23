@@ -2,9 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import static utilities.Constants.Valid_UserName;
 import static utilities.Constants.Valid_Password;
 import static utilities.Constants.Invalid_UserName;
@@ -12,9 +9,7 @@ import static utilities.Constants.Invalid_Password;
 import static utilities.Constants.Error_MESSAGE;
 import static utilities.Constants.SUCCESS_MESSAGE;
 
-public class Login_page extends root_base.Base_Root<Login_page> {
-	WebDriverWait wait = new WebDriverWait(driver, 60);
-
+public class Login_page extends rootbase.Base_Root<Login_page> {
 	String Actualresult;
 	private static Login_page  A= new Login_page();
 	private Login_page() {
@@ -41,15 +36,11 @@ public class Login_page extends root_base.Base_Root<Login_page> {
 	private static final String LoginBtn = "com.malmstein.yahnac:id/login_login";
 	private static final String CancelBtn= "com.malmstein.yahnac:id/login_cancel";
 	private static final String ErrorMsg = "com.malmstein.yahnac:id/login_error_label";
-	private static final String Login_Icon = "com.malmstein.yahnac:id/view_drawer_header_login";
-
 	
 	
-	public Login_page loginwith_InvalidUNandPW() throws Exception { // Try to login with Invalid credentials and validate the error message
+	public Login_page loginwith_InvalidUNandPW() throws InterruptedException { // Try to login with Invalid credentials and validate the error message
 		
-	    
-
-		validateObjectExistence(UserName);
+		
 		UserName_Textfield = driver.findElement(By.id(UserName));
 		enterText(UserName_Textfield, Invalid_UserName);
 		
@@ -59,7 +50,6 @@ public class Login_page extends root_base.Base_Root<Login_page> {
 		Login_Btn = driver.findElement(By.id(LoginBtn));
 		clickonView(Login_Btn);
 		
-		validateObjectExistence(UserName);
 		Error_Msg = driver.findElement(By.id(ErrorMsg));
 		Actualresult = Error_Msg.getText();
 		Assertvalues(Actualresult, Error_MESSAGE);
@@ -70,9 +60,8 @@ public class Login_page extends root_base.Base_Root<Login_page> {
 		
 	}
 	
-	public Login_page LoginWithoutCredentials() throws Exception { // Login without adding credentials 
+	public Login_page LoginWithoutCredentials() throws InterruptedException { // Login without adding credentials 
 		
-		validateObjectExistence(UserName);
 		clearText(UserName_Textfield);
 		clearText(Password_Textfield);
 		clickonView(Login_Btn);
@@ -85,19 +74,14 @@ public class Login_page extends root_base.Base_Root<Login_page> {
 	
 
 
-	public Login_page Cancel_btnBehavior() throws Exception { // Click on Login button and verify user is navigating to Launch page
+	public Login_page Cancel_btnBehavior() throws InterruptedException { // Click on Login button and verify user is navigating to Launch page
 		
-		
-		validateObjectExistence(UserName);
 		enterText(UserName_Textfield, Invalid_UserName);
 		enterText(Password_Textfield, Invalid_Password);
 		
 		Cancel_Btn = driver.findElement(By.id(CancelBtn));
 		clickonView(Cancel_Btn);
-
-		validateObjectExistence(Login_Icon);
 		VerifyElementisPresent(Launch_Page.Login_icon);
-		clickonView(Launch_Page.Login_icon);
 		
 
 		return this;
@@ -105,13 +89,12 @@ public class Login_page extends root_base.Base_Root<Login_page> {
 	}
 	
 
-	public Login_page LoginWithValidCredentials() throws Exception { // Login with valid credentials and Verify user is successfully logged in
+	public Login_page LoginWithValidCredentials() throws InterruptedException { // Login with valid credentials and Verify user is successfully logged in
 		
-		validateObjectExistence(UserName);
+		clickonView(Launch_Page.Login_icon);
 		enterText(UserName_Textfield, Valid_UserName);
 		enterText(Password_Textfield, Valid_Password);
 		clickonView(Login_Btn);
-		validateObjectExistence(UserName);
 		String Actualresult = Error_Msg.getText();
 		Assertvalues(Actualresult, SUCCESS_MESSAGE);
 		

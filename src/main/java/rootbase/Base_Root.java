@@ -1,8 +1,6 @@
-package root_base;
+package rootbase;
 
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,34 +14,10 @@ import io.appium.java_client.android.AndroidDriver;
 public abstract class Base_Root <T> extends Test_setup {
 	
 	
-	public boolean validateObjectExistence(String element) throws Exception { // Wait for the element, as we know Explicit wait is unconditionally handled
-		 																	//in appium, so I have just created a logic for wait.
-
-		int i = 0;
-		int small_wait=2;
-		int max_attempt=30;
-		do {
-			try {
-				driver.findElement(By.id(element));
-				Thread.sleep(small_wait * 4);
-				return true;
-			} catch (Exception e) {
-				i++;
-				Thread.sleep(small_wait);
-			}
-		} while (i < max_attempt);
-		return false;
-	}
-	
-	
-	
-	
 	
 	public T clickonView(WebElement Btn) { // This method can be used to click function
 		WebDriverWait wait = new WebDriverWait(driver, 60);
 		try {
-		
-			
 		wait.until(ExpectedConditions.visibilityOf(Btn));
 		Btn.click();
 		}catch(Exception e) {
@@ -54,7 +28,9 @@ public abstract class Base_Root <T> extends Test_setup {
 	
 	public T Assertvalues(String Actual, String Expected) throws InterruptedException { // This method can be used for Asserts function
 		SoftAssert softAssertion= new SoftAssert();
+		Thread.sleep(5000);
 		softAssertion.assertEquals(Actual, Expected);
+		Thread.sleep(5000);
 		softAssertion.assertAll();
 		return (T) this;
 	}

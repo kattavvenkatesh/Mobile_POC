@@ -2,12 +2,9 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class Launch_Page extends root_base.Base_Root<Launch_Page>  {
-	WebDriverWait wait = new WebDriverWait(driver, 60);
-
+public class Launch_Page extends rootbase.Base_Root<Launch_Page>  {
+	
 	private static Launch_Page  A= new Launch_Page();
 	private Launch_Page() {
 		
@@ -19,7 +16,6 @@ public class Launch_Page extends root_base.Base_Root<Launch_Page>  {
 		}
 		return A;
 	} 
-	
 	
 	protected static WebElement Hamburger_btn;
 	protected static WebElement Outer_fram;
@@ -33,7 +29,7 @@ public class Launch_Page extends root_base.Base_Root<Launch_Page>  {
 	private static final String Login_Icon = "com.malmstein.yahnac:id/view_drawer_header_login";
 	
 	
-	public Launch_Page validateHamburger_btn() throws Exception { // Verifying Hamburger button is present or not
+	public Launch_Page validateHamburger_btn() throws InterruptedException { // Verifying Hamburger button is present or not
 		
 		Hamburger_btn = driver.findElement(By.xpath(Menu_btn));
 		//Outer_fram = driver.findElement(By.id(outer_frame));
@@ -45,7 +41,7 @@ public class Launch_Page extends root_base.Base_Root<Launch_Page>  {
 	
 	public Launch_Page NavigatetoLoginScreen() { // Navigating to Login screen
 	
-
+	
 	clickonView(Hamburger_btn);
 	Login_icon = driver.findElement(By.id(Login_Icon));
 	clickonView(Login_icon);

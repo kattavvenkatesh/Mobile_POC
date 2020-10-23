@@ -1,93 +1,163 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="2" passed="1">
+<testng-results skipped="2" failed="0" ignored="0" total="2" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="33877" started-at="2020-10-12T16:16:25Z" finished-at="2020-10-12T16:16:59Z">
+  <suite name="Default suite" duration-ms="101" started-at="2020-10-12T12:07:52 IST" finished-at="2020-10-12T12:07:52 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="33877" started-at="2020-10-12T16:16:25Z" finished-at="2020-10-12T16:16:59Z">
+    <test name="Default test" duration-ms="101" started-at="2020-10-12T12:07:52 IST" finished-at="2020-10-12T12:07:52 IST">
       <class name="testCases.Login_TestCase">
-        <test-method status="PASS" signature="startReport()[pri:0, instance:testCases.Login_TestCase@1817d444]" name="startReport" is-config="true" duration-ms="106" started-at="2020-10-12T21:46:25Z" finished-at="2020-10-12T21:46:25Z">
+        <test-method status="FAIL" signature="startReport()[pri:0, instance:testCases.Login_TestCase@5891e32e]" name="startReport" is-config="true" duration-ms="66" started-at="2020-10-12T12:07:52 IST" finished-at="2020-10-12T12:07:52 IST">
+          <exception class="java.lang.NoClassDefFoundError">
+            <message>
+              <![CDATA[freemarker/ext/beans/BeansWrapperBuilder]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NoClassDefFoundError: freemarker/ext/beans/BeansWrapperBuilder
+at com.aventstack.extentreports.reporter.ExtentHtmlReporter.start(ExtentHtmlReporter.java:84)
+at com.aventstack.extentreports.Report.attach(Report.java:41)
+at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:580)
+at com.aventstack.extentreports.ExtentReports.attachReporter(ExtentReports.java:68)
+at root_base.Test_setup.startReport(Test_setup.java:77)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:61)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:366)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:320)
+at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:617)
+at org.testng.TestRunner.beforeRun(TestRunner.java:607)
+at org.testng.TestRunner.run(TestRunner.java:578)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: freemarker.ext.beans.BeansWrapperBuilder
+at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+... 30 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NoClassDefFoundError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- startReport -->
-        <test-method status="PASS" signature="initialization()[pri:0, instance:testCases.Login_TestCase@1817d444]" name="initialization" is-config="true" duration-ms="11415" started-at="2020-10-12T21:46:25Z" finished-at="2020-10-12T21:46:37Z">
+        <test-method status="SKIP" signature="initialization()[pri:0, instance:testCases.Login_TestCase@5891e32e]" name="initialization" is-config="true" duration-ms="-1602484672289" started-at="2020-10-12T12:07:52 IST" finished-at="1970-01-01T05:30:00 IST">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- initialization -->
-        <test-method status="PASS" signature="launchandVerifys()[pri:0, instance:testCases.Login_TestCase@1817d444]" name="launchandVerifys" duration-ms="2433" started-at="2020-10-12T21:46:37Z" finished-at="2020-10-12T21:46:39Z">
+        <test-method status="SKIP" signature="launchandVerifys()[pri:1, instance:testCases.Login_TestCase@5891e32e]" name="launchandVerifys" duration-ms="0" started-at="2020-10-12T12:07:52 IST" finished-at="2020-10-12T12:07:52 IST">
+          <exception class="java.lang.NoClassDefFoundError">
+            <message>
+              <![CDATA[freemarker/ext/beans/BeansWrapperBuilder]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NoClassDefFoundError: freemarker/ext/beans/BeansWrapperBuilder
+at com.aventstack.extentreports.reporter.ExtentHtmlReporter.start(ExtentHtmlReporter.java:84)
+at com.aventstack.extentreports.Report.attach(Report.java:41)
+at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:580)
+at com.aventstack.extentreports.ExtentReports.attachReporter(ExtentReports.java:68)
+at root_base.Test_setup.startReport(Test_setup.java:77)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:61)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:366)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:320)
+at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:617)
+at org.testng.TestRunner.beforeRun(TestRunner.java:607)
+at org.testng.TestRunner.run(TestRunner.java:578)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: freemarker.ext.beans.BeansWrapperBuilder
+at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+... 30 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NoClassDefFoundError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchandVerifys -->
-        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:testCases.Login_TestCase@1817d444]" name="getResult" is-config="true" duration-ms="2" started-at="2020-10-12T21:46:39Z" finished-at="2020-10-12T21:46:39Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=launchandVerifys status=SUCCESS method=Login_TestCase.launchandVerifys()[pri:0, instance:testCases.Login_TestCase@1817d444] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method status="FAIL" signature="validateLoginFunction()[pri:0, instance:testCases.Login_TestCase@1817d444]" name="validateLoginFunction" duration-ms="19694" started-at="2020-10-12T21:46:39Z" finished-at="2020-10-12T21:46:59Z">
-          <exception class="java.lang.AssertionError">
+        <test-method status="SKIP" signature="validateLoginFunction()[pri:2, instance:testCases.Login_TestCase@5891e32e]" name="validateLoginFunction" duration-ms="0" started-at="2020-10-12T12:07:52 IST" finished-at="2020-10-12T12:07:52 IST">
+          <exception class="java.lang.NoClassDefFoundError">
             <message>
-              <![CDATA[The following asserts failed:
-null]]>
+              <![CDATA[freemarker/ext/beans/BeansWrapperBuilder]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: The following asserts failed:
-null
-	at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:37)
-	at root_base.Base_Root.Assertvalues(Base_Root.java:58)
-	at pages.Login_page.LoginWithValidCredentials(Login_page.java:117)
-	at testCases.Login_TestCase.validateLoginFunction(Login_TestCase.java:42)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+              <![CDATA[java.lang.NoClassDefFoundError: freemarker/ext/beans/BeansWrapperBuilder
+at com.aventstack.extentreports.reporter.ExtentHtmlReporter.start(ExtentHtmlReporter.java:84)
+at com.aventstack.extentreports.Report.attach(Report.java:41)
+at java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:948)
+at java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:580)
+at com.aventstack.extentreports.ExtentReports.attachReporter(ExtentReports.java:68)
+at root_base.Test_setup.startReport(Test_setup.java:77)
+at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.lang.reflect.Method.invoke(Method.java:498)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:132)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:61)
+at org.testng.internal.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:366)
+at org.testng.internal.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:320)
+at org.testng.TestRunner.invokeTestConfigurations(TestRunner.java:617)
+at org.testng.TestRunner.beforeRun(TestRunner.java:607)
+at org.testng.TestRunner.run(TestRunner.java:578)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1218)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1140)
+at org.testng.TestNG.runSuites(TestNG.java:1069)
+at org.testng.TestNG.run(TestNG.java:1037)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: java.lang.ClassNotFoundException: freemarker.ext.beans.BeansWrapperBuilder
+at java.net.URLClassLoader.findClass(URLClassLoader.java:382)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:418)
+at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:355)
+at java.lang.ClassLoader.loadClass(ClassLoader.java:351)
+... 30 more
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
+          </exception> <!-- java.lang.NoClassDefFoundError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateLoginFunction -->
-        <test-method status="PASS" signature="getResult(org.testng.ITestResult)[pri:0, instance:testCases.Login_TestCase@1817d444]" name="getResult" is-config="true" duration-ms="2" started-at="2020-10-12T21:46:59Z" finished-at="2020-10-12T21:46:59Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=validateLoginFunction status=FAILURE method=Login_TestCase.validateLoginFunction()[pri:0, instance:testCases.Login_TestCase@1817d444] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- getResult -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:testCases.Login_TestCase@1817d444]" name="tearDown" is-config="true" duration-ms="213" started-at="2020-10-12T21:46:59Z" finished-at="2020-10-12T21:46:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
       </class> <!-- testCases.Login_TestCase -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

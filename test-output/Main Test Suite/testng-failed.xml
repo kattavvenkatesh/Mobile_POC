@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Main Test Suite]">
-  <test name="Login TestCase(failed)">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Main Test Suite]">
+  <test thread-count="5" name="Login TestCaset(failed)">
     <classes>
       <class name="testCases.Login_TestCase">
         <methods>
-          <include name="getResult"/>
           <include name="validateLoginFunction"/>
           <include name="initialization"/>
-          <include name="tearDown"/>
-          <include name="startReport"/>
         </methods>
       </class> <!-- testCases.Login_TestCase -->
     </classes>
-  </test> <!-- Login TestCase(failed) -->
+  </test> <!-- Login TestCaset(failed) -->
 </suite> <!-- Failed suite [Main Test Suite] -->

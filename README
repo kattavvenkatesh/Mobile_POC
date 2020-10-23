@@ -16,8 +16,9 @@
 2.4 Open TestNG.XML file 
 2.5 Run the project as TestNG Test. 
 
-Note: I have integrated 'Extent reports' to get the HTML format report, so after running the test refresh the product, open the test-output report folder
-Right click on testreport.html file and click on open with browser to get detail HTML report. 
+Note: I have integrated 'Extent reports' to get the HTML format report, but I have commented the code because "BeansWrapperBuilder" issue 
+has not resolved from 'Extent Reports' side for the newer version. 
+
 
 3. Assumption Made - 
 
@@ -32,5 +33,5 @@ Right click on testreport.html file and click on open with browser to get detail
 4.4 Create the API's in case if will plan to store the test cases in DB
 4.5 Integrate JIRA API to automate manually created test cases and update the status. 
 4.6 Run the application in different OS versions to test the compatibility.  
-4.7 Integrate the project to CI pipeline
+
 

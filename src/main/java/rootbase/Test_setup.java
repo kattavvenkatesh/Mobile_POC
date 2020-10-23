@@ -1,6 +1,7 @@
-package root_base;
+package rootbase;
 
 
+import java.io.FileInputStream;
 import java.net.URL;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.ITestResult;
@@ -17,6 +18,7 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.ChartLocation;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.yara.utils.ResourceUtility;
 
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
@@ -27,7 +29,7 @@ public class Test_setup <T>{
 	
 	
 	public static AppiumDriver<MobileElement> driver;
-
+	private static ResourceUtility resourceUtility;
     ExtentHtmlReporter htmlReporter;
     public ExtentReports extent;
     public ExtentTest test;
@@ -37,25 +39,26 @@ public class Test_setup <T>{
 	
 	public T initialization() throws InterruptedException {
 		
-		
+    	
 		try {
+			resourceUtility = new ResourceUtility("config");;
+			String platformName = resourceUtility.getResource("platformName");
+			String platformVersion = resourceUtility.getResource("platformVersion");
+			String deviceName = resourceUtility.getResource("deviceName");
+			String udid = resourceUtility.getResource("udid");
 
 			System.out.println("Launching App");
 			DesiredCapabilities cap= new DesiredCapabilities();
 			driver = new AndroidDriver(new URL("http://0.0.0.0:4723/wd/hub"), cap);
-			cap.setCapability("deviceName", "Pixel 3");
-			cap.setCapability("udid", "emulator-5554");
-			cap.setCapability("platformName", "Android");
-			cap.setCapability("platformVersion", "10.0"); 
-			//cap.setCapability("noReset", true);
-			//cap.setCapability("appPackage", "com.malmstein.yahnac");
+			cap.setCapability("deviceName", deviceName);
+			cap.setCapability("udid", udid);
+			cap.setCapability("platformName", platformName);
+			cap.setCapability("platformVersion", platformVersion); 
 			cap.setCapability(MobileCapabilityType.APP, System.getProperty("user.dir")+"/Resources/app-debug.apk");
 			URL url = new URL("http://127.0.0.1:4723/wd/hub");
 			driver= new AppiumDriver<MobileElement>(url,cap);
 			cap.setCapability("noReset", false);
 			cap.setCapability("fullReset", true);
-			System.setProperty("org.freemarker.loggerLibrary", "none");
-
 
 			
 
@@ -74,9 +77,7 @@ public class Test_setup <T>{
 	@BeforeTest
 	public T startReport(){
 	
-		 htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") +"/test-output/output.html");
-		
-
+		 htmlReporter = new ExtentHtmlReporter(System.getProperty("user.dir") +"/test-output/testReport.html");
 	        extent = new ExtentReports();
 	        extent.attachReporter(htmlReporter);
 	        htmlReporter.config().setChartVisibilityOnOpen(true);
@@ -92,7 +93,7 @@ public class Test_setup <T>{
 	
 	
 	
-  @AfterMethod
+  //@AfterMethod
     public T getResult(ITestResult result) {
         if(result.getStatus() == ITestResult.FAILURE) {
             test.log(Status.FAIL, MarkupHelper.createLabel(result.getName()+" FAILED ", ExtentColor.RED));
@@ -110,7 +111,7 @@ public class Test_setup <T>{
     }
     
     
-   @AfterTest
+   // @AfterTest
     public T tearDown() {
     	//to write or update test information to reporter
         extent.flush();
